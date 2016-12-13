@@ -1,0 +1,14 @@
+<h2>Trainer Info</h2>
+<form #trainerForm="ngForm" (ngSubmit)="updateInfo(trainerForm)">
+  <div>Name: <input type="text" name="name" ngModel></div>
+  <div>Age: <input type="text" name="age" ngModel></div>
+  <div>Gym:
+    <select name="gym" ngModel>
+      <option value="">Select Your Gym</option>
+      <option value="">cerulean</option>
+      <option value="">vermillion</option>
+      <option value="">pewter</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>

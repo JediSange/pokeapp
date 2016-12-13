@@ -1,0 +1,9 @@
+<div *ngIf="!pokemon || pokemon.length == 0">Loading...</div>
+<div *ngIf="pokemon && pokemon.length > 0" class="pokemon-list">
+  <ul>
+    <li *ngFor="let pokemonData of pokemon">
+      <a [routerLink]="['detail', pokemonData.name]">{{ pokemonData.name }}</a>
+    </li>
+  </ul>
+</div>
+

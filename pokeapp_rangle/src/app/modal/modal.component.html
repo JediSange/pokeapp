@@ -1,0 +1,10 @@
+<div class="modal">
+  <div class="title-bar">
+    <ng-content select=".title"></ng-content>
+  </div>
+  <div class="content-body">
+    <ng-content select=".body"></ng-content>
+
+    <button type="button" (click)="close.emit(true)">Close</button>
+  </div>
+</div>

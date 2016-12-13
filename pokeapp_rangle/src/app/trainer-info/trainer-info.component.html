@@ -1,0 +1,37 @@
+<h2>Trainer Info</h2>
+<form #trainerForm="ngForm" (ngSubmit)="updateInfo(trainerForm)">
+  <div>
+    Name: <input type="text" name="name" [(ngModel)]="user.name" required>
+  </div>
+  <div>
+    Age: <input type="text" name="age" [(ngModel)]="user.age" required pattern="[0-9]+">
+  </div>
+  <div>
+    Gym:
+    <select name="gym" [(ngModel)]="user.gym" required>
+      <option value="">Select your gym</option>
+      <option>cerulean</option>
+      <option>pewter</option>
+      <option>vermillion</option>
+    </select>
+  </div>
+  <div>
+    Favorite Pokemon: <input type="text" name="favorite" [(ngModel)]="user.favorite" required>
+  </div>
+  <div>
+    Money: <input type="number" name="money" [(ngModel)]="user.money" required>
+  </div>
+  <button type="submit" [disabled]="!trainerForm.valid">Submit</button>
+</form>
+
+<app-modal *ngIf="!notificationModalClosed" (close)="notificationModalClosed = true">
+  <div class="body">
+    <p>
+      My name is {{user.name}}. I am {{user.age}} year(s) old.
+    </p>
+  </div>
+  <div class="title">
+    <i class="fa fa-exclamation"></i>
+    Update User
+  </div>
+</app-modal>

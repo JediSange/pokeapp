@@ -1,0 +1,8 @@
+<div *ngIf="pokemon === undefined">
+  Loading
+</div>
+
+<div *ngIf="pokemon">
+  <app-pokemon-display [pokemon]="pokemon"></app-pokemon-display>
+  <a [routerLink]="['/detail', pokemon.id + 1]">Next</a>
+</div>
